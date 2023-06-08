@@ -1,0 +1,44 @@
+[
+    {
+      "language": "Spanish",
+      "enrolledStudents": 25,
+      "teacherName": "Maria Hernandez",
+      "price": "99",
+      "courseLength": "5 weeks"
+    },
+    {
+      "language": "French",
+      "enrolledStudents": 20,
+      "teacherName": "Jean-Luc Dubois",
+      "price": "89",
+      "courseLength": "5 weeks"
+    },
+    {
+      "language": "Mandarin Chinese",
+      "enrolledStudents": 18,
+      "teacherName": "Li Wei",
+      "price": "109",
+      "courseLength": "5 weeks"
+    },
+    {
+      "language": "German",
+      "enrolledStudents": 15,
+      "teacherName": "Hans Müller",
+      "price": "79",
+      "courseLength": "5 weeks"
+    },
+    {
+      "language": "Japanese",
+      "enrolledStudents": 12,
+      "teacherName": "Yumi Nakamura",
+      "price": "95",
+      "courseLength": "5 weeks"
+    },
+    {
+      "language": "Italian",
+      "enrolledStudents": 10,
+      "teacherName": "Giovanni Rossi",
+      "price": "85",
+      "courseLength": "5 weeks"
+    }
+  ]
