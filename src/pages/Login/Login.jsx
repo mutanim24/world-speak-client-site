@@ -4,6 +4,7 @@ import { Link, Navigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { FaEyeSlash, FaEye } from 'react-icons/fa';
 import { AuthContext } from "../../provider/AuthProvider/AuthProvider";
+import SocialLogin from "../shared/SocialLogin/SocialLogin";
 
 const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -65,7 +66,7 @@ const Login = () => {
                                 <label className="label">
                                     <span className="label-text">Password</span>
                                 </label>
-                                <input type={showPassword ? "text" : "password"} {...register("password",)} placeholder="password" className="input input-bordered" />
+                                <input type={showPassword ? "text" : "password"} {...register("password",)} placeholder="password" className="relative input input-bordered" />
                                 <button
                                     type="button"
                                     className="absolute top-[250px] right-12 transform -translate-y-1/2 text-gray-500"
@@ -79,13 +80,10 @@ const Login = () => {
                                 <input className="btn text-white bg-cyan-600" type="submit" value="Login" />
                             </div>
                             <label className="label">
-                                <Link to='/signup' className="label-text-alt link link-hover text-center">new at WorldSpeak</Link>
+                                <Link to='/signup' className="label-text-alt link link-hover text-center underline text-cyan-600">New at WorldSpeak</Link>
                             </label>
-                            {/* todo social */}
+                            <SocialLogin></SocialLogin>
                         </form>
-                    </div>
-                    <div className="text-center">
-                        {/* <img src={authenticationImg} alt="" /> */}
                     </div>
                 </div>
             </div>

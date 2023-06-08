@@ -1,5 +1,5 @@
 import React from 'react';
-import slide1 from '../../../assets/logo.png'
+import slide1 from '../../../assets/english.jpg'
 
 const Slider = () => {
 
@@ -11,10 +11,10 @@ const Slider = () => {
                 <div className="absolute flex justify-between items-center w-full h-full">
                     <a href="#slide3" className="btn btn-circle">❮</a>
                     <a href="#slide2" className="btn btn-circle">❯</a>
-                    <div className="text-white text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                        <h1 className="text-4xl font-bold">Slide 1</h1>
-                        <p className="text-lg">Description of slide 1</p>
-                        <a className="btn btn-primary mt-4">Learn More</a>
+                    <div className="space-y-5 text-white text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <h1 className="text-5xl font-bold">Embrace Multilingualism</h1>
+                        <p className="text-lg">Immerse yourself in the beauty of languages with WorldSpeak's extensive selection of courses</p>
+                        <a className="btn bg-cyan-600 text-white mt-4">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -24,10 +24,10 @@ const Slider = () => {
                 <div className="absolute flex justify-between items-center w-full h-full">
                     <a href="#slide1" className="btn btn-circle ">❮</a>
                     <a href="#slide3" className="btn btn-circle ">❯</a>
-                    <div className="text-white text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                        <h1 className="text-4xl font-bold">Slide 2</h1>
-                        <p className="text-lg">Description of slide 2</p>
-                        <a className="btn btn-primary mt-4">Learn More</a>
+                    <div className="space-y-5 text-white text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <h1 className="text-5xl font-bold">Unlock the World's Languages</h1>
+                        <p className="text-lg">Discover a diverse range of language courses taught by expert teachers on WorldSpeak</p>
+                        <a className="btn bg-cyan-600 text-white mt-4">Learn More</a>
                     </div>
                 </div>
             </div>
@@ -37,10 +37,10 @@ const Slider = () => {
                 <div className="absolute flex justify-between items-center w-full h-full">
                     <a href="#slide2" className="btn btn-circle ">❮</a>
                     <a href="#slide1" className="btn btn-circle ">❯</a>
-                    <div className="text-white text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                        <h1 className="text-4xl font-bold">Slide 3</h1>
-                        <p className="text-lg">Description of slide 3</p>
-                        <a className="btn btn-primary mt-4">Learn More</a>
+                    <div className="space-y-5 text-white text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+                        <h1 className="text-5xl font-bold">Learn Any Language, Anytime</h1>
+                        <p className="text-lg">Explore our marketplace of language courses and embark on a journey of global communication</p>
+                        <a className="btn bg-cyan-600 text-white mt-4">Learn More</a>
                     </div>
                 </div>
             </div>

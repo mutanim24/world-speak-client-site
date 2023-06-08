@@ -4,6 +4,7 @@ import { Link, Navigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { FaEyeSlash, FaEye } from 'react-icons/fa';
 import { AuthContext } from "../../provider/AuthProvider/AuthProvider";
+import SocialLogin from "../shared/SocialLogin/SocialLogin";
 
 const SignUp = () => {
     const [showPassword, setShowPassword] = useState(false);
@@ -105,9 +106,9 @@ const SignUp = () => {
                                 <input className="btn text-white bg-cyan-600" type="submit" value="Register" />
                             </div>
                             <label className="label">
-                                <Link to='/login' className="label-text-alt link link-hover text-center">Already have an account</Link>
+                                <Link to='/login' className="label-text-alt link link-hover text-center underline text-cyan-600">Already have an account</Link>
                             </label>
-                            {/* <SocialLogin></SocialLogin> */}
+                            <SocialLogin></SocialLogin>
                         </form>
                     </div>
                     <div className="text-center">
