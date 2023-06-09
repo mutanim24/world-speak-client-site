@@ -13,7 +13,7 @@ const Navbar = () => {
     const menuBar = <>
         <li className='uppercase font-bold'><NavLink className={({ isActive }) => isActive ? 'rounded-none font-bold border-b-2 border-cyan-600 mb-0' : ''} to='/'>Home</NavLink></li>
         <li className='uppercase font-bold'><NavLink className={({ isActive }) => isActive ? 'rounded-none font-bold border-b-2 border-cyan-600 mb-0' : ''} to='/all-toys'>Instructors</NavLink></li>
-        <li className='uppercase font-bold'><NavLink className={({ isActive }) => isActive ? 'rounded-none font-bold border-b-2 border-cyan-600 mb-0' : ''} to='/all-toys'>Classes</NavLink></li>
+        <li className='uppercase font-bold'><NavLink className={({ isActive }) => isActive ? 'rounded-none font-bold border-b-2 border-cyan-600 mb-0' : ''} to='/classes'>Classes</NavLink></li>
         <li className='uppercase font-bold'><NavLink className={({ isActive }) => isActive ? 'rounded-none font-bold border-b-2 border-cyan-600 mb-0' : ''} to='/all-toys'>Dashboard</NavLink></li>
     </>
 

@@ -1,0 +1,57 @@
+[
+    {
+      "instructor_name": "John Doe",
+      "instructor_email": "johndoe@example.com",
+      "instructor_image": "https://images.pexels.com/photos/8617636/pexels-photo-8617636.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "class_name": "Beginner's Guide to Language English",
+      "class_image": "https://media.istockphoto.com/id/850935974/photo/wooden-english-letters-background.jpg?b=1&s=612x612&w=0&k=20&c=jD8Dldkm4o1WyqntWBeAikYlLSsqD_zd2VDSgTqcz7c=",
+      "available_seats": 10,
+      "price": 99.99,
+      "class_status": "pending",
+      "enrolled_class": 0
+    },
+    {
+      "instructor_name": "Jane Smith",
+      "instructor_email": "janesmith@example.com",
+      "instructor_image": "https://images.pexels.com/photos/8617769/pexels-photo-8617769.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "class_name": "Intermediate Language Chinese",
+      "class_image": "https://blog.keatschinese.com/wp-content/uploads/2020/12/learning-the-chinese-language.jpg",
+      "available_seats": 15,
+      "price": 149.99,
+      "class_status": "pending",
+      "enrolled_class": 0
+    },
+    {
+      "instructor_name": "Michael Johnson",
+      "instructor_email": "michaeljohnson@example.com",
+      "instructor_image": "https://images.pexels.com/photos/16160869/pexels-photo-16160869/free-photo-of-anapriscilla.jpeg?auto=compress&cs=tinysrgb&w=600",
+      "class_name": "Advanced Language Spanish",
+      "class_image": "https://media.istockphoto.com/id/1453852952/vector/spanish.jpg?s=612x612&w=0&k=20&c=osO54uBF4_OsGvHjbDON15g9lecjS2Jhw7QiaFZjSao=",
+      "available_seats": 5,
+      "price": 199.99,
+      "class_status": "pending",
+      "enrolled_class": 0
+    },
+    {
+      "instructor_name": "Emily Brown",
+      "instructor_email": "emilybrown@example.com",
+      "instructor_image": "https://kj1bcdn.b-cdn.net/media/77330/teachers.png",
+      "class_name": "Conversational Language Germany",
+      "class_image": "https://dammann-german-english-translations.com.au/wp-content/uploads/2018/06/Distribution-of-the-German-Language-e1525693687656-600x418-1.jpg",
+      "available_seats": 12,
+      "price": 79.99,
+      "class_status": "pending",
+      "enrolled_class": 0
+    },
+    {
+      "instructor_name": "Rabindra bakul",
+      "instructor_email": "danielwilson@example.com",
+      "instructor_image": "https://media.istockphoto.com/id/1292554747/photo/african-american-female-science-teacher-with-group-of-kids-programming-electric-toys-and.jpg?s=612x612&w=0&k=20&c=GXyjsT2V1zhRV52_Xfyalf-9I4pCxe2b8qxf1y5kr3Y=",
+      "class_name": "Business Language Bengali",
+      "class_image": "https://mc.webpcache.epapr.in/mcms.php?size=medium&in=https://mcmscache.epapr.in/post_images/website_350/post_25855151/full.jpg",
+      "available_seats": 8,
+      "price": 129.99,
+      "class_status": "pending",
+      "enrolled_class": 0
+    }
+  ]
