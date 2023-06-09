@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { FaEyeSlash, FaEye } from 'react-icons/fa';
 import { AuthContext } from "../../provider/AuthProvider/AuthProvider";
@@ -8,8 +8,8 @@ import SocialLogin from "../shared/SocialLogin/SocialLogin";
 
 const SignUp = () => {
     const [showPassword, setShowPassword] = useState(false);
-
     const { createUser, updateUser } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const onSubmit = data => {
@@ -18,27 +18,27 @@ const SignUp = () => {
                 console.log(result.user)
                 updateUser(data.name, data.photoURL)
                     .then(() => {
-                        // const userData = { name: data.name, email: data.email };
-                        // fetch('http://localhost:5000/users', {
-                        //     method: "POST",
-                        //     headers: {
-                        //         'content-type': 'application/json'
-                        //     },
-                        //     body: JSON.stringify(userData)
-                        // })
-                        //     .then(res => res.json)
-                        //     .then(data => {
-                        //         console.log(data)
-                        //     })
-                        Swal.fire({
-                            position: 'center',
-                            icon: 'success',
-                            title: 'Register successfully',
-                            showConfirmButton: false,
-                            timer: 1500
+                        const userData = { name: data.name, email: data.email };
+                        fetch('http://localhost:5000/users', {
+                            method: "POST",
+                            headers: {
+                                'content-type': 'application/json'
+                            },
+                            body: JSON.stringify(userData)
                         })
-                        reset();
-                        Navigate('/')
+                            .then(res => res.json)
+                            .then(data => {
+                                console.log(data)
+                            })
+                        // Swal.fire({
+                        //     position: 'center',
+                        //     icon: 'success',
+                        //     title: 'Register successfully',
+                        //     showConfirmButton: false,
+                        //     timer: 1500
+                        // })
+                        // reset();
+                        navigate('/')
                     })
                     .catch(err => console.log(err.message))
 
