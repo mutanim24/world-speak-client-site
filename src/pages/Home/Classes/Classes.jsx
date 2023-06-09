@@ -4,6 +4,7 @@ import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 
 const Classes = () => {
     const [classes, setClasses] = useState([]);
+    // TODO: use back-end data from mongo
     useEffect(() => {
         fetch('classes.json')
             .then(res => res.json())

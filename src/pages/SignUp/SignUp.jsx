@@ -111,9 +111,6 @@ const SignUp = () => {
                             <SocialLogin></SocialLogin>
                         </form>
                     </div>
-                    <div className="text-center">
-                        {/* <img src={authenticationImg} alt="" /> */}
-                    </div>
                 </div>
             </div>
         </div>

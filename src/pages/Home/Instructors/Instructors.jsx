@@ -4,6 +4,7 @@ import SectionTitle from '../../../components/SectionTitle/SectionTitle';
 
 const Instructors = () => {
     const [instructors, setInstructors] = useState([]);
+    // TODO: use backend data from mongo
     useEffect(() => {
         fetch('instructor.json')
             .then(res => res.json())
