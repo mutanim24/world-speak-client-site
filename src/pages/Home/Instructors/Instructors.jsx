@@ -15,6 +15,7 @@ const Instructors = () => {
                 {
                     data.map(instructor => <Instructor
                         instructor={instructor}
+                        key={instructor._id}
                     ></Instructor>)
                 }
             </div>
