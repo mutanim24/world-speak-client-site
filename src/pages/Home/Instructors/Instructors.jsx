@@ -1,15 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Instructor from './Instructor';
 import SectionTitle from '../../../components/SectionTitle/SectionTitle';
+import useData from '../../../hook/useData';
 
 const Instructors = () => {
-    const [instructors, setInstructors] = useState([]);
-    // TODO: use backend data from mongo
-    useEffect(() => {
-        fetch('instructor.json')
-            .then(res => res.json())
-            .then(data => setInstructors(data))
-    }, [])
+    const [data] = useData();
     return (
         <div className='px-14'>
             <SectionTitle
@@ -18,7 +13,7 @@ const Instructors = () => {
             ></SectionTitle>
             <div className='grid grid-cols-3 gap-7'>
                 {
-                    instructors.map(instructor => <Instructor
+                    data.map(instructor => <Instructor
                         instructor={instructor}
                     ></Instructor>)
                 }
