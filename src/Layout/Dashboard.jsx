@@ -3,7 +3,7 @@ import { NavLink, Outlet } from 'react-router-dom';
 
 const Dashboard = () => {
 
-    const role = '';
+    const role = 'instruc';
 
     return (
         <div className="drawer lg:drawer-open">

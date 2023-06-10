@@ -17,7 +17,7 @@ const AddClass = () => {
         const class_image = form.class_image.value;
         const instructor_name = form.instructor_name.value;
         const instructor_email = form.instructor_email.value;
-        const instructor_image = user.photoURL;
+        const instructor_image = form.instructor_image.value;
         const available_seats = form.seats.value;
         const price = form.price.value;
         const class_status = 'pending';
@@ -71,6 +71,12 @@ const AddClass = () => {
                             <span className="label-text font-semibold">Instructor Email</span>
                         </label>
                         <input required name='instructor_email' readOnly type="email" defaultValue={user?.email} placeholder="instructor email" className="input input-bordered input-info w-full" />
+                    </div>
+                    <div className="form-control">
+                        <label className="label">
+                            <span className="label-text font-semibold">Instructor imageURL</span>
+                        </label>
+                        <input required name='instructor_image' type="text" placeholder="instructor imageURL" className="input input-bordered input-info w-full" />
                     </div>
                     <div className="form-control">
                         <label className="label">
