@@ -1,13 +1,12 @@
 import React from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../../../provider/AuthProvider/AuthProvider';
-import PageBanner from '../../../components/PageBanner/PageBanner';
-import Swal from 'sweetalert2';
 
-const AddClass = () => {
+const UpdateClass = () => {
+    const {user} = useContext(AuthContext);
+    
 
-    const { user } = useContext(AuthContext);
-    const handleAddClass = event => {
+    const handleUpdateClass = event => {
         event.preventDefault();
         const form = event.target;
         const class_name = form.class_name.value;
@@ -23,7 +22,7 @@ const AddClass = () => {
         const newClass = { class_name, class_image, instructor_name, instructor_email, instructor_image, available_seats, price, class_status, enrolled_class };
 
         fetch('http://localhost:5000/classes', {
-            method: 'POST',
+            method: 'PUT',
             headers: {
                 'content-type': 'application/json'
             },
@@ -32,15 +31,15 @@ const AddClass = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                if (data.acknowledged) {
-                    Swal.fire({
-                        position: 'center',
-                        icon: 'success',
-                        title: 'Class Added Successfully',
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
-                }
+                // if (data.acknowledged) {
+                //     Swal.fire({
+                //         position: 'center',
+                //         icon: 'success',
+                //         title: 'Class Update Successfully',
+                //         showConfirmButton: false,
+                //         timer: 1500
+                //     })
+                // }
             })
     }
 
@@ -49,7 +48,7 @@ const AddClass = () => {
             <PageBanner
                 heading='Add your class'
             ></PageBanner>
-            <form onSubmit={handleAddClass} className='m-6 md:m-14 p-8 rounded shadow-lg'>
+            <form onSubmit={handleUpdateClass} className='m-6 md:m-14 p-8 rounded shadow-lg'>
                 <div className='grid md:grid-cols-2 gap-5'>
                     <div className="form-control">
                         <label className="label">
@@ -95,4 +94,4 @@ const AddClass = () => {
     );
 };
 
-export default AddClass;
+export default UpdateClass;
