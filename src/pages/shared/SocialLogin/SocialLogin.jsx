@@ -6,7 +6,22 @@ const SocialLogin = () => {
     const handleGoogleLogin = () => {
         googleLogin()
             .then(result => {
-                console.log(result.user)
+                // console.log(result.user)
+                if (result?.user.email) {
+                    const userData = { name: result.user.displayName, email: result.user.email, image: result.user?.photoURL, role: 'student' };
+                    fetch('http://localhost:5000/users', {
+                        method: "POST",
+                        headers: {
+                            'content-type': 'application/json'
+                        },
+                        body: JSON.stringify(userData)
+                    })
+                        .then(res => res.json)
+                        .then(data => {
+                            console.log(data)
+                        })
+                    
+                }
             })
             .catch(err => console.log(err.message))
     }

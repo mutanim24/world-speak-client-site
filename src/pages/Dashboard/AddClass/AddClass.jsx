@@ -3,10 +3,13 @@ import { useContext } from 'react';
 import { AuthContext } from '../../../provider/AuthProvider/AuthProvider';
 import PageBanner from '../../../components/PageBanner/PageBanner';
 import Swal from 'sweetalert2';
+import useAxiosSecure from '../../../hook/useAxiosSecure';
 
 const AddClass = () => {
+    const axiosSecure = useAxiosSecure()
 
     const { user } = useContext(AuthContext);
+
     const handleAddClass = event => {
         event.preventDefault();
         const form = event.target;
@@ -22,17 +25,10 @@ const AddClass = () => {
 
         const newClass = { class_name, class_image, instructor_name, instructor_email, instructor_image, available_seats, price, class_status, enrolled_class };
 
-        fetch('http://localhost:5000/classes', {
-            method: 'POST',
-            headers: {
-                'content-type': 'application/json'
-            },
-            body: JSON.stringify(newClass)
-        })
-            .then(res => res.json())
+        axiosSecure.post('/classes', newClass)
             .then(data => {
                 console.log(data)
-                if (data.acknowledged) {
+                if (data.data.acknowledged) {
                     Swal.fire({
                         position: 'center',
                         icon: 'success',
@@ -42,6 +38,7 @@ const AddClass = () => {
                     })
                 }
             })
+            .catch(err => console.log(err))
     }
 
     return (

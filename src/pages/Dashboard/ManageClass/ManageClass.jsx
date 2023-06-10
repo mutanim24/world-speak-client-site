@@ -1,19 +1,21 @@
 import React, { useEffect, useState } from 'react';
+import useAxiosSecure from '../../../hook/useAxiosSecure';
 
 const ManageClass = () => {
     const [classes, setClasses] = useState([]);
+    const axiosSecure = useAxiosSecure();
     // TODO: use tan stack query
     useEffect(() => {
-        fetch('http://localhost:5000/classes')
-            .then(res => res.json())
-            .then(data => setClasses(data))
+        axiosSecure('/classes')
+            .then(data => setClasses(data.data))
     }, [])
     return (
         <div className="overflow-x-auto w-full px-8">
             <table className="table">
                 {/* head */}
                 <thead>
-                    <tr className='text-black text-1xl'>
+                    <tr className='text-black text-[18px] bg-cyan-200'>
+                        <th>#</th>
                         <th>Class</th>
                         <th>Instructor</th>
                         <th>Price</th>
@@ -23,11 +25,12 @@ const ManageClass = () => {
                 </thead>
                 <tbody>
                     {
-                        classes.map(cls => <tr key={cls._id}>
+                        classes.map((cls, index) => <tr key={cls._id}>
+                            <th>{index + 1}</th>
                             <td>
                                 <div className="flex items-center space-x-3">
                                     <div className="avatar">
-                                        <div className="mask mask-squircle w-20 h-20">
+                                        <div className="mask  w-20 h-20">
                                             <img src={cls.class_image} alt="Avatar Tailwind CSS Component" />
                                         </div>
                                     </div>

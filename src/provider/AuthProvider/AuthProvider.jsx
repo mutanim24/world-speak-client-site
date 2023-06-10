@@ -6,7 +6,7 @@ export const AuthContext = createContext();
 const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 
-const AuthProvider = ({children}) => {
+const AuthProvider = ({ children }) => {
     const [user, setUser] = useState();
     const [loading, setLoading] = useState(true);
 
@@ -33,8 +33,27 @@ const AuthProvider = ({children}) => {
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
-            setUser(currentUser)
-            setLoading(false)
+            if (currentUser?.email) {
+                fetch('http://localhost:5000/jwt', {
+                    method: 'POST',
+                    headers: {
+                        'content-type': 'application/json'
+                    },
+                    body: JSON.stringify({email: currentUser?.email})
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        localStorage.setItem('access_token', data.token)
+                        setUser(currentUser)
+                        setLoading(false)
+                    })
+            }
+            else {
+                localStorage.removeItem('access_token')
+                setUser(null)
+                setLoading(false)
+            }
+
         })
         return () => {
             unsubscribe();

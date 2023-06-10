@@ -5,23 +5,27 @@ import { AuthContext } from '../../../provider/AuthProvider/AuthProvider';
 import { useState } from 'react';
 import { FcFeedback } from 'react-icons/fc';
 import { Link } from 'react-router-dom';
+import useAxiosSecure from '../../../hook/useAxiosSecure';
 
 const MyClass = () => {
     const { user } = useContext(AuthContext);
     const [myClasses, setMyClasses] = useState([])
+    const axiosSecure = useAxiosSecure();
+
     useEffect(() => {
-        fetch(`http://localhost:5000/my-class?email=${user?.email}`)
-            .then(res => res.json())
-            .then(data => setMyClasses(data))
-    }, [])
+        axiosSecure.get(`/my-class?email=${user?.email}`)
+            .then(data => setMyClasses(data?.data))
+            .catch(err => console.log(err))
+    }, [axiosSecure])
     return (
         <div className='w-full px-8'>
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
                     {/* head */}
                     <thead>
-                        <tr>
+                        <tr className='text-black text-[18px] bg-cyan-200'>
 
+                            <th>#</th>
                             <th>Name</th>
                             <th>Feedback</th>
                             <th>Status</th>
@@ -30,11 +34,12 @@ const MyClass = () => {
                     </thead>
                     <tbody>
                         {
-                            myClasses.map(cls => <tr key={cls._id}>
+                            myClasses.map((cls, index) => <tr key={cls._id}>
+                                <th>{index + 1}</th>
                                 <td>
                                     <div className="flex items-center space-x-3">
                                         <div className="avatar rounded-sm">
-                                            <div className="mask mask-squircle w-20 h-20">
+                                            <div className="mask w-20 h-20">
                                                 <img src={cls.class_image} alt="Avatar Tailwind CSS Component" />
                                             </div>
                                         </div>
@@ -45,7 +50,7 @@ const MyClass = () => {
                                     </div>
                                 </td>
                                 <td>
-                                   <button className='btn rounded-full'><FcFeedback className='text-2xl'></FcFeedback></button> 
+                                    <button className='btn rounded-full'><FcFeedback className='text-2xl'></FcFeedback></button>
                                 </td>
                                 <td>{cls.class_status}</td>
                                 <th>

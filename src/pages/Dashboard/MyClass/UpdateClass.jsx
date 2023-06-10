@@ -1,10 +1,11 @@
 import React from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../../../provider/AuthProvider/AuthProvider';
+import { useLoaderData } from 'react-router-dom';
 
 const UpdateClass = () => {
     const {user} = useContext(AuthContext);
-    
+    const data = useLoaderData();
 
     const handleUpdateClass = event => {
         event.preventDefault();
@@ -54,7 +55,7 @@ const UpdateClass = () => {
                         <label className="label">
                             <span className="label-text font-semibold">Class Name</span>
                         </label>
-                        <input required name='class_name' type="text" placeholder="class name" className="input input-bordered input-info w-full" />
+                        <input required name='class_name' type="text" defaultValue={data.class_name} placeholder="class name" className="input input-bordered input-info w-full" />
                     </div>
                     <div className="form-control">
                         <label className="label">
