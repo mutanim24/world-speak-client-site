@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import useAxiosSecure from '../../../hook/useAxiosSecure';
 import useAllClass from '../../../hook/useAllClass';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const ManageClass = () => {
 
@@ -37,6 +38,7 @@ const ManageClass = () => {
     const handleDeny = (id) => {
         handleUpdateStatus(id, "denied");
     };
+
 
     // const handleApprove = id => {
     //     fetch(`http://localhost:5000/classes/${id}`, {
@@ -110,13 +112,13 @@ const ManageClass = () => {
                                 <br />
                                 <button disabled={cls.class_status !== 'pending'} onClick={() => handleDeny(cls._id)} className="btn hover:text-cyan-600 w-full bg-cyan-600 text-white btn-xs">Deny</button>
                                 <br />
-                                <button className="btn hover:text-cyan-600 w-full bg-cyan-600 text-white btn-xs">Feedback</button>
+                                <Link to={`/dashboard/feedback/${cls._id}`}><button className="btn hover:text-cyan-600 w-full bg-cyan-600 text-white btn-xs">Feedback</button></Link>
                             </th>
                         </tr>)
                     }
                 </tbody>
             </table>
-        </div>
+        </div >
     );
 };
 

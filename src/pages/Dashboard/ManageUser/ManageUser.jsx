@@ -1,36 +1,46 @@
 import React, { useEffect, useState } from 'react';
 import Swal from 'sweetalert2';
+import useUsers from '../../../hook/useUsers';
 
 const ManageUser = () => {
-    const [dbUsers, setDbUsers] = useState([]);
-    useEffect(() => {
-        fetch('http://localhost:5000/users')
-            .then(res => res.json())
-            .then(data => setDbUsers(data))
-    }, [])
+    const [users, refetch] = useUsers()
+    // const [dbUsers, setDbUsers] = useState([]);
+    // useEffect(() => {
+    //     fetch('http://localhost:5000/users')
+    //         .then(res => res.json())
+    //         .then(data => setDbUsers(data))
+    // }, [])
 
-    const handleMakeAdmin = user => {
-        fetch(`http://localhost:5000/users/admin/${user._id}`, {
+    const handleRole = (id, position) => {
+        fetch(`http://localhost:5000/users/admin/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify({ role: 'admin' })
+            body: JSON.stringify({ role: position })
         })
             .then(res => res.json())
             .then(data => {
                 if (data.acknowledged) {
-                    // refetch()
+                    refetch()
                     Swal.fire({
                         position: 'center',
                         icon: 'success',
-                        title: `${user.name} is an admin`,
+                        title: `Created an ${position} successfully`,
                         showConfirmButton: false,
                         timer: 1500
                     })
                 }
 
             })
+    }
+
+    const handleAdmin = id => {
+        handleRole(id, 'admin')
+    }
+
+    const handleInstructor = id => {
+        handleRole(id, 'instructor')
     }
 
     return (
@@ -50,7 +60,7 @@ const ManageUser = () => {
                 <tbody>
                     {/* row 1 */}
                     {
-                        dbUsers.map((user, index) => <tr key={user._id}>
+                        users.map((user, index) => <tr key={user._id}>
                             <th>{index + 1}</th>
                             <td>
                                 <div className="flex items-center space-x-3">
@@ -67,13 +77,17 @@ const ManageUser = () => {
                             <td>{user.email}</td>
                             <td>{user.role}</td>
                             <th>
-                                <button className="btn hover:text-cyan-600 bg-cyan-600 text-white btn-xs">Make Instructor</button>
+                                {
+                                    user.role === 'instructor' ?
+                                        'instructor' :
+                                        <button onClick={() => handleInstructor(user._id)} className="btn hover:text-cyan-600 bg-cyan-600 text-white  btn-xs">Make Instructor</button>
+                                }
                             </th>
                             <th>
                                 {
                                     user.role === 'admin' ?
                                         'admin' :
-                                        <button onClick={() => handleMakeAdmin(user)} className="btn hover:text-cyan-600 bg-cyan-600 text-white  btn-sm">Make Admin</button>
+                                        <button onClick={() => handleAdmin(user._id)} className="btn hover:text-cyan-600 bg-cyan-600 text-white  btn-xs">Make Admin</button>
                                 }
                             </th>
                         </tr>)

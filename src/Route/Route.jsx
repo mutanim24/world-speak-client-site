@@ -17,6 +17,7 @@ import MyClass from "../pages/Dashboard/MyClass/MyClass";
 import EnrolledClass from "../pages/Dashboard/EnrolledClass/EnrolledClass";
 import PrivateRoute from "./PrivateRoute";
 import UpdateClass from "../pages/Dashboard/MyClass/UpdateClass";
+import Feedback from "../pages/Dashboard/ManageClass/Feedback";
 
  export const router = createBrowserRouter([
     {
@@ -87,6 +88,11 @@ import UpdateClass from "../pages/Dashboard/MyClass/UpdateClass";
           path: 'update-class/:id',
           element: <UpdateClass></UpdateClass>,
           loader: ({params}) => fetch(`http://localhost:5000/update-class/${params.id}`)
+        },
+        {
+          path: 'feedback/:id',
+          element: <Feedback></Feedback>,
+          loader: ({params}) => fetch(`http://localhost:5000/classes/${params.id}`)
         }
       ]
     }

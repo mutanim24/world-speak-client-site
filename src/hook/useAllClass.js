@@ -10,7 +10,7 @@ const useAllClass = () => {
     const { data: allClass = [], refetch } = useQuery({
         queryKey: ['allClass'],
         queryFn: async () => {
-            const res = await axiosSecure(`/classes`)
+            const res = await axiosSecure(`/allclasses`)
             return res.data;
         }
     })
