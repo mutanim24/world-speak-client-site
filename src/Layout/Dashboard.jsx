@@ -1,9 +1,11 @@
 import React from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
+import useAdmin from '../hook/useAdmin';
 
 const Dashboard = () => {
 
-    const role = 'instruc';
+    // const [isAdmin] = useAdmin();
+    const role = 'instructor';
 
     return (
         <div className="drawer lg:drawer-open">

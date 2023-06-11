@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Swal from 'sweetalert2';
 
 const ManageUser = () => {
     const [dbUsers, setDbUsers] = useState([]);
@@ -7,7 +8,31 @@ const ManageUser = () => {
             .then(res => res.json())
             .then(data => setDbUsers(data))
     }, [])
-    console.log(dbUsers)
+
+    const handleMakeAdmin = user => {
+        fetch(`http://localhost:5000/users/admin/${user._id}`, {
+            method: 'PATCH',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({ role: 'admin' })
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.acknowledged) {
+                    // refetch()
+                    Swal.fire({
+                        position: 'center',
+                        icon: 'success',
+                        title: `${user.name} is an admin`,
+                        showConfirmButton: false,
+                        timer: 1500
+                    })
+                }
+
+            })
+    }
+
     return (
         <div className="overflow-x-auto w-full px-8">
             <table className="table">
@@ -18,7 +43,8 @@ const ManageUser = () => {
                         <th>User</th>
                         <th>Email</th>
                         <th>Role</th>
-                        <th>Action</th>
+                        <th>Make Instructor</th>
+                        <th>Make Admin</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -42,14 +68,19 @@ const ManageUser = () => {
                             <td>{user.role}</td>
                             <th>
                                 <button className="btn hover:text-cyan-600 bg-cyan-600 text-white btn-xs">Make Instructor</button>
-                                <button className="btn hover:text-cyan-600 bg-cyan-600 text-white btn-xs">Make Admin</button>
-
+                            </th>
+                            <th>
+                                {
+                                    user.role === 'admin' ?
+                                        'admin' :
+                                        <button onClick={() => handleMakeAdmin(user)} className="btn hover:text-cyan-600 bg-cyan-600 text-white  btn-sm">Make Admin</button>
+                                }
                             </th>
                         </tr>)
                     }
                 </tbody>
             </table>
-        </div>
+        </div >
     );
 };
 

@@ -54,7 +54,7 @@ const MyClass = () => {
                                 </td>
                                 <td>{cls.class_status}</td>
                                 <th>
-                                    <Link to={`/update-class/${cls._id}`}><button className="btn btn-sm bg-cyan-600 text-white btn-xs">Update</button></Link>
+                                    <Link to={`/my-class/update-class/${cls._id}`}><button className="btn btn-sm bg-cyan-600 text-white btn-xs">Update</button></Link>
                                 </th>
                             </tr>)
                         }

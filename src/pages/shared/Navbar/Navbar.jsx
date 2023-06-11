@@ -14,7 +14,7 @@ const Navbar = () => {
         <li className='uppercase font-bold'><NavLink className={({ isActive }) => isActive ? 'rounded-none font-bold border-b-2 border-cyan-600 mb-0' : ''} to='/'>Home</NavLink></li>
         <li className='uppercase font-bold'><NavLink className={({ isActive }) => isActive ? 'rounded-none font-bold border-b-2 border-cyan-600 mb-0' : ''} to='/instructor'>Instructors</NavLink></li>
         <li className='uppercase font-bold'><NavLink className={({ isActive }) => isActive ? 'rounded-none font-bold border-b-2 border-cyan-600 mb-0' : ''} to='/classes'>Classes</NavLink></li>
-        <li className='uppercase font-bold'><NavLink className={({ isActive }) => isActive ? 'rounded-none font-bold border-b-2 border-cyan-600 mb-0' : ''} to='/dashboard'>Dashboard</NavLink></li>
+        { user && <li className='uppercase font-bold'><NavLink className={({ isActive }) => isActive ? 'rounded-none font-bold border-b-2 border-cyan-600 mb-0' : ''} to='/dashboard'>Dashboard</NavLink></li> }
     </>
 
     return (

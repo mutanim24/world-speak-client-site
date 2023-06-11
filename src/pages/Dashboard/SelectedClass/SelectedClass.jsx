@@ -1,25 +1,68 @@
 import React, { useContext, useState } from 'react';
 import useAxiosSecure from '../../../hook/useAxiosSecure';
 import { AuthContext } from '../../../provider/AuthProvider/AuthProvider';
-import { useQuery } from '@tanstack/react-query';
+import useSelectedClass from '../../../hook/useSelectedClass';
+import Swal from 'sweetalert2';
 
 const SelectedClass = () => {
-    const [selectedClass, setSelectedClass] = useState([])
-    const { user } = useContext(AuthContext);
-    const axiosSecure = useAxiosSecure();
-    axiosSecure(`/select-class?email=${user?.email}`)
-        .then(data => {
-            setSelectedClass(data.data)
-        })
-        .catch(err => console.log(err))
+    // const { user } = useContext(AuthContext);
+    // const axiosSecure = useAxiosSecure();
 
-    const handleDelete = (id) => {
-        const { data: selectClass = [], refetch } = useQuery(["users"], async () => {
-            const res = await axiosSecure.delete(`/select-class/${id}`)
-            console.log(res.data);
-            return res.data;
+    const [selectedClass, refetch] = useSelectedClass();
+
+    const handleDelete = id => {
+
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/select-class/${id}`, {
+                    method: "DELETE"
+                })
+                    .then(res => res.json())
+                    .then(data => {
+                        if (data.deletedCount > 0) {
+                            refetch()
+                            Swal.fire(
+                                'Deleted!',
+                                'Your file has been deleted.',
+                                'success'
+                            )
+                        }
+                    })
+
+            }
         })
+
     }
+
+    // axiosSecure(`/select-class?email=${user?.email}`)
+    //     .then(data => {
+    //         setSelectedClass(data.data)
+    //     })
+    //     .catch(err => console.log(err))
+
+    // const handleDelete = async (id) => {
+    //     const { data = [], refetch } = useQuery({
+    //         queryKey: ['data'],
+    //         queryFn: async () => {
+    //             const res = await fetch(`http://localhost:5000/select-class/${id}`, {
+    //                 method: 'DELETE'
+    //             });
+    //             return res.json();
+    //         }
+    //     });
+
+    //     // Call the refetch function to update the data after deletion
+    //     await refetch();
+    // };
 
     return (
         <div className="overflow-x-auto w-full px-8">

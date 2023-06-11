@@ -69,6 +69,9 @@ import UpdateClass from "../pages/Dashboard/MyClass/UpdateClass";
           path: 'my-class',
           element: <MyClass></MyClass>
         },
+        {
+          path: 'my-class/update-class/:id'
+        },
         // student route
         {
           path: 'selected-class',
