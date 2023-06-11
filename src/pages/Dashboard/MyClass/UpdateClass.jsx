@@ -2,6 +2,7 @@ import React from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../../../provider/AuthProvider/AuthProvider';
 import { useLoaderData } from 'react-router-dom';
+import PageBanner from '../../../components/PageBanner/PageBanner';
 
 const UpdateClass = () => {
     const {user} = useContext(AuthContext);
@@ -47,7 +48,7 @@ const UpdateClass = () => {
     return (
         <div className='w-full'>
             <PageBanner
-                heading='Add your class'
+                heading='Update your class'
             ></PageBanner>
             <form onSubmit={handleUpdateClass} className='m-6 md:m-14 p-8 rounded shadow-lg'>
                 <div className='grid md:grid-cols-2 gap-5'>

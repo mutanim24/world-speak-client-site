@@ -4,8 +4,9 @@ import useAdmin from '../hook/useAdmin';
 
 const Dashboard = () => {
 
-    // const [isAdmin] = useAdmin();
-    const role = 'instructor';
+    // const [isAdmin, ,] = useAdmin();
+    // console.log(isAdmin)
+    const role = 'admin';
 
     return (
         <div className="drawer lg:drawer-open">

@@ -70,7 +70,9 @@ import UpdateClass from "../pages/Dashboard/MyClass/UpdateClass";
           element: <MyClass></MyClass>
         },
         {
-          path: 'my-class/update-class/:id'
+          path: 'my-class/:id',
+          element: <UpdateClass></UpdateClass>,
+          loader: ({params}) => fetch(`http://localhost:5000/my-class/${params.id}`)
         },
         // student route
         {

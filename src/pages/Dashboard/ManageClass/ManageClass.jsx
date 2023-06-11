@@ -1,18 +1,76 @@
 import React, { useEffect, useState } from 'react';
 import useAxiosSecure from '../../../hook/useAxiosSecure';
+import useAllClass from '../../../hook/useAllClass';
+import Swal from 'sweetalert2';
 
 const ManageClass = () => {
-    const [classes, setClasses] = useState([]);
-    const axiosSecure = useAxiosSecure();
-    // TODO: use tan stack query
-    useEffect(() => {
-        axiosSecure('/classes')
-            .then(data => setClasses(data.data))
-    }, [])
+
+    const [allClass, refetch] = useAllClass();
+
+    const handleUpdateStatus = (id, status) => {
+        fetch(`http://localhost:5000/classes/${id}`, {
+            method: "PATCH",
+            headers: {
+                "content-type": "application/json",
+            },
+            body: JSON.stringify({ class_status: status }),
+        })
+            .then((res) => res.json())
+            .then((data) => {
+                if (data.acknowledged) {
+                    refetch();
+                    Swal.fire({
+                        position: "center",
+                        icon: "success",
+                        title: `Class has been ${status}`,
+                        showConfirmButton: false,
+                        timer: 1500,
+                    });
+                }
+            });
+    };
+
+    const handleApprove = (id) => {
+        handleUpdateStatus(id, "approved");
+    };
+
+    const handleDeny = (id) => {
+        handleUpdateStatus(id, "denied");
+    };
+
+    // const handleApprove = id => {
+    //     fetch(`http://localhost:5000/classes/${id}`, {
+    //         method: "PATCH",
+    //         headers: {
+    //             'content-type': 'application/json'
+    //         },
+    //         body: JSON.stringify({ class_status: 'approved' })
+    //     })
+    //         .then(res => res.json())
+    //         .then(data => {
+    //             if (data.acknowledged) {
+    //                 refetch()
+    //                 Swal.fire({
+    //                     position: 'center',
+    //                     icon: 'success',
+    //                     title: 'Class has been approved',
+    //                     showConfirmButton: false,
+    //                     timer: 1500
+    //                 })
+    //             }
+    //         })
+    // }
+
+    // const [classes, setClasses] = useState([]);
+    // const axiosSecure = useAxiosSecure();
+    // // TODO: use tan stack query
+    // useEffect(() => {
+    //     axiosSecure('/classes')
+    //         .then(data => setClasses(data.data))
+    // }, [])
     return (
         <div className="overflow-x-auto w-full px-8">
             <table className="table">
-                {/* head */}
                 <thead>
                     <tr className='text-black text-[18px] bg-cyan-200'>
                         <th>#</th>
@@ -25,7 +83,7 @@ const ManageClass = () => {
                 </thead>
                 <tbody>
                     {
-                        classes.map((cls, index) => <tr key={cls._id}>
+                        allClass.map((cls, index) => <tr key={cls._id}>
                             <th>{index + 1}</th>
                             <td>
                                 <div className="flex items-center space-x-3">
@@ -48,9 +106,9 @@ const ManageClass = () => {
                             <td>${cls.price}</td>
                             <td>{cls.class_status}</td>
                             <th>
-                                <button className="btn hover:text-cyan-600 w-full bg-cyan-600 text-white btn-xs">Approve</button>
+                                <button disabled={cls.class_status !== 'pending'} onClick={() => handleApprove(cls._id)} className="btn hover:text-cyan-600 w-full bg-cyan-600 text-white btn-xs">Approve</button>
                                 <br />
-                                <button className="btn hover:text-cyan-600 w-full bg-cyan-600 text-white btn-xs">Deny</button>
+                                <button disabled={cls.class_status !== 'pending'} onClick={() => handleDeny(cls._id)} className="btn hover:text-cyan-600 w-full bg-cyan-600 text-white btn-xs">Deny</button>
                                 <br />
                                 <button className="btn hover:text-cyan-600 w-full bg-cyan-600 text-white btn-xs">Feedback</button>
                             </th>
