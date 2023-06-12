@@ -3,12 +3,17 @@ import useAxiosSecure from '../../hook/useAxiosSecure';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../provider/AuthProvider/AuthProvider';
 import { useNavigate } from 'react-router-dom';
+import useAdmin from '../../hook/useAdmin';
+import useInstructor from '../../hook/useInstructor';
 
 const ClassCard = ({ cls }) => {
     const { user } = useContext(AuthContext);
     const navigate = useNavigate();
     const { class_name, class_image, instructor_name, price } = cls;
     const axiosSecure = useAxiosSecure();
+
+    const [isAdmin] = useAdmin()
+    const [isInstructor] = useInstructor();
 
     const handleSelectClass = cls => {
         if (user?.email) {
@@ -55,7 +60,7 @@ const ClassCard = ({ cls }) => {
                 <p>Enrolled: {cls.enrolled_class}</p>
                 <div className='flex items-center justify-between'>
                     <p>Available seats: {cls.available_seats}</p>
-                    <button onClick={() => handleSelectClass(cls)} className='btn btn-sm bg-cyan-600 text-white'>Select</button>
+                    <button disabled={isAdmin || isInstructor} onClick={() => handleSelectClass(cls)} className='btn btn-sm bg-cyan-600 text-white'>Select</button>
                 </div>
             </div>
         </div>

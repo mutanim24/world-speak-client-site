@@ -1,6 +1,6 @@
 import {
-    createBrowserRouter,
-  } from "react-router-dom";
+  createBrowserRouter,
+} from "react-router-dom";
 import Main from "../Layout/Main";
 import Home from "../pages/Home/Home/Home";
 import Login from "../pages/Login/Login";
@@ -18,82 +18,86 @@ import EnrolledClass from "../pages/Dashboard/EnrolledClass/EnrolledClass";
 import PrivateRoute from "./PrivateRoute";
 import UpdateClass from "../pages/Dashboard/MyClass/UpdateClass";
 import Feedback from "../pages/Dashboard/ManageClass/Feedback";
+import Payment from "../pages/Dashboard/Payment/Payment";
 
- export const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <Main></Main>,
-      errorElement: <FourZeroFour></FourZeroFour>,
-      children: [
-        {
-            path: '/',
-            element: <Home></Home>
-            
-        },
-        {
-          path: '/signup',
-          element: <SignUp></SignUp>
-        },
-        {
-          path: '/login',
-          element: <Login></Login>
-        },
-        {
-          path: '/classes',
-          element: <AllClasses></AllClasses>
-        },
-        {
-          path: '/instructor',
-          element: <Instructor></Instructor>
-        }
-      ]
-    },
-    {
-      path: '/dashboard',
-      element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
-      children: [
-        // admin
-        {
-          path: 'manage-class',
-          element: <ManageClass></ManageClass> 
-        },
-        {
-          path: 'manage-user',
-          element: <ManageUser></ManageUser>
-        },
-        // instructor route
-        {
-          path: 'add-class',
-          element: <AddClass></AddClass>
-        },
-        {
-          path: 'my-class',
-          element: <MyClass></MyClass>
-        },
-        {
-          path: 'my-class/:id',
-          element: <UpdateClass></UpdateClass>,
-          loader: ({params}) => fetch(`http://localhost:5000/my-class/${params.id}`)
-        },
-        // student route
-        {
-          path: 'selected-class',
-          element: <SelectedClass></SelectedClass>
-        },
-        {
-          path: 'enrolled-class',
-          element: <EnrolledClass></EnrolledClass>
-        },
-        {
-          path: 'update-class/:id',
-          element: <UpdateClass></UpdateClass>,
-          loader: ({params}) => fetch(`http://localhost:5000/update-class/${params.id}`)
-        },
-        {
-          path: 'feedback/:id',
-          element: <Feedback></Feedback>,
-          loader: ({params}) => fetch(`http://localhost:5000/classes/${params.id}`)
-        }
-      ]
-    }
-  ]);
+export const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Main></Main>,
+    errorElement: <FourZeroFour></FourZeroFour>,
+    children: [
+      {
+        path: '/',
+        element: <Home></Home>
+
+      },
+      {
+        path: '/signup',
+        element: <SignUp></SignUp>
+      },
+      {
+        path: '/login',
+        element: <Login></Login>
+      },
+      {
+        path: '/classes',
+        element: <AllClasses></AllClasses>
+      },
+      {
+        path: '/instructor',
+        element: <Instructor></Instructor>
+      }
+    ]
+  },
+  {
+    path: '/dashboard',
+    element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+    children: [
+      // admin
+      {
+        path: 'manage-class',
+        element: <ManageClass></ManageClass>
+      },
+      {
+        path: 'manage-user',
+        element: <ManageUser></ManageUser>
+      },
+      // instructor route
+      {
+        path: 'add-class',
+        element: <AddClass></AddClass>
+      },
+      {
+        path: 'my-class',
+        element: <MyClass></MyClass>
+      },
+      {
+        path: 'my-class/:id',
+        element: <UpdateClass></UpdateClass>,
+        loader: ({ params }) => fetch(`http://localhost:5000/my-class/${params.id}`)
+      },
+      // student route
+      {
+        path: 'selected-class',
+        element: <SelectedClass></SelectedClass>
+      },
+      {
+        path: "payment",
+        element: <Payment></Payment>
+      },
+      {
+        path: 'enrolled-class',
+        element: <EnrolledClass></EnrolledClass>
+      },
+      {
+        path: 'update-class/:id',
+        element: <UpdateClass></UpdateClass>,
+        loader: ({ params }) => fetch(`http://localhost:5000/update-class/${params.id}`)
+      },
+      {
+        path: 'feedback',
+        element: <Feedback></Feedback>
+      }
+    ]
+  }
+]);

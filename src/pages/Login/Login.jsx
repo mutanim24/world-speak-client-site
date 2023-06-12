@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link, Navigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import { FaEyeSlash, FaEye } from 'react-icons/fa';
 import { AuthContext } from "../../provider/AuthProvider/AuthProvider";
@@ -10,37 +10,20 @@ const Login = () => {
     const [showPassword, setShowPassword] = useState(false);
     const { signIn } = useContext(AuthContext);
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const navigate = useNavigate();
     const onSubmit = data => {
         signIn(data.email, data.password)
             .then(result => {
-                console.log(result.user)
-                // console.log(result.user)
-                // updateUser(data.name, data.photoURL)
-                //     .then(() => {
-                //         const userData = { name: data.name, email: data.email };
-                //         fetch('http://localhost:5000/users', {
-                //             method: "POST",
-                //             headers: {
-                //                 'content-type': 'application/json'
-                //             },
-                //             body: JSON.stringify(userData)
-                //         })
-                //             .then(res => res.json)
-                //             .then(data => {
-                //                 console.log(data)
-                //             })
-                //         Swal.fire({
-                //             position: 'center',
-                //             icon: 'success',
-                //             title: 'Register successfully',
-                //             showConfirmButton: false,
-                //             timer: 1500
-                //         })
-                //         reset();
-                //         Navigate('/')
-                //     })
-                //     .catch(err => console.log(err.message))
-
+                if (result.user?.email) {
+                    Swal.fire({
+                            position: 'center',
+                            icon: 'success',
+                            title: 'Login successfully',
+                            showConfirmButton: false,
+                            timer: 1500
+                        })
+                        navigate('/')
+                    }
             })
             .catch(err => {
                 console.log(err.message)

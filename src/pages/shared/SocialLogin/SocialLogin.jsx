@@ -1,8 +1,12 @@
 import { useContext } from 'react';
 import { FcGoogle } from 'react-icons/fc';
 import { AuthContext } from '../../../provider/AuthProvider/AuthProvider';
+import { useNavigate } from 'react-router-dom';
+
+
 const SocialLogin = () => {
     const { googleLogin } = useContext(AuthContext);
+    const navigate = useNavigate();
     const handleGoogleLogin = () => {
         googleLogin()
             .then(result => {
@@ -20,7 +24,7 @@ const SocialLogin = () => {
                         .then(data => {
                             console.log(data)
                         })
-                    
+                        navigate('/')
                 }
             })
             .catch(err => console.log(err.message))

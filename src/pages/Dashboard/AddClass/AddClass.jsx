@@ -23,7 +23,7 @@ const AddClass = () => {
         const class_status = 'pending';
         const enrolled_class = 0;
 
-        const newClass = { class_name, class_image, instructor_name, instructor_email, instructor_image, available_seats, price, class_status, enrolled_class };
+        const newClass = { class_name, class_image, instructor_name, instructor_email, instructor_image, available_seats, price, class_status, enrolled_class, feedback: '' };
 
         axiosSecure.post('/classes', newClass)
             .then(data => {

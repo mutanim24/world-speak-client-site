@@ -3,6 +3,7 @@ import useAxiosSecure from '../../../hook/useAxiosSecure';
 import { AuthContext } from '../../../provider/AuthProvider/AuthProvider';
 import useSelectedClass from '../../../hook/useSelectedClass';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const SelectedClass = () => {
     // const { user } = useContext(AuthContext);
@@ -101,8 +102,7 @@ const SelectedClass = () => {
                                 <button onClick={() => handleDelete(cls._id)} className="btn hover:text-cyan-600 bg-cyan-600 text-white btn-sm">Delete</button>
                             </td>
                             <th>
-                                <button className="btn hover:text-cyan-600 bg-cyan-600 text-white btn-sm">Pay</button>
-
+                                <Link to="/dashboard/payment" state={cls}><button className='btn btn-warning btn-sm'>Pay</button></Link>
                             </th>
                         </tr>)
                     }

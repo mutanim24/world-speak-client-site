@@ -50,7 +50,7 @@ const MyClass = () => {
                                     </div>
                                 </td>
                                 <td>
-                                    <button className='btn rounded-full'><FcFeedback className='text-2xl'></FcFeedback></button>
+                                    <FcFeedback title={cls.feedback.fb} className='text-2xl'></FcFeedback>
                                 </td>
                                 <td>{cls.class_status}</td>
                                 <th>

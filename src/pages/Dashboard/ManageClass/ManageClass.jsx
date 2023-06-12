@@ -110,9 +110,9 @@ const ManageClass = () => {
                             <th>
                                 <button disabled={cls.class_status !== 'pending'} onClick={() => handleApprove(cls._id)} className="btn hover:text-cyan-600 w-full bg-cyan-600 text-white btn-xs">Approve</button>
                                 <br />
-                                <button disabled={cls.class_status !== 'pending'} onClick={() => handleDeny(cls._id)} className="btn hover:text-cyan-600 w-full bg-cyan-600 text-white btn-xs">Deny</button>
+                                <button disabled={cls.class_status !== 'pending'} onClick={() => handleDeny(cls._id)} className="my-3 btn hover:text-cyan-600 w-full bg-cyan-600 text-white btn-xs">Deny</button>
                                 <br />
-                                <Link to={`/dashboard/feedback/${cls._id}`}><button className="btn hover:text-cyan-600 w-full bg-cyan-600 text-white btn-xs">Feedback</button></Link>
+                                <Link to={`/dashboard/feedback`} state={cls}><button className="btn hover:text-cyan-600 w-full bg-cyan-600 text-white btn-xs">Feedback</button></Link>
                             </th>
                         </tr>)
                     }

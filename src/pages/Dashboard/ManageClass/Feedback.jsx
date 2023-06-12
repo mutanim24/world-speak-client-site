@@ -2,31 +2,36 @@ import React from 'react';
 import PageBanner from '../../../components/PageBanner/PageBanner';
 import Swal from 'sweetalert2';
 import useAxiosSecure from '../../../hook/useAxiosSecure';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useLocation } from 'react-router-dom';
 
 const Feedback = () => {
     const axiosSecure = useAxiosSecure();
     const data = useLoaderData()
-    console.log(data)
-    const handleFeedback = event => {
+
+    const location = useLocation();
+    const stateValue = location.state;
+    const id = stateValue._id
+
+    const handleFeedback = (event) => {
         event.preventDefault();
-        const feedback = event.target.feedback.value;
-        
-        axiosSecure.patch('/classes')
-            .then(data => {
-                console.log(data)
-                if (data.data.acknowledged) {
-                    Swal.fire({
-                        position: 'center',
-                        icon: 'success',
-                        title: 'Feedback Send Successfully',
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
+        const form = event.target;
+        const fb = form.feedback.value;
+
+        // Send the feedback to the API
+        fetch(`http://localhost:5000/insertFeedback/${id}`, {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ fb }),
+        })
+            .then((response) => response.json())
+            .then((result) => {
+                if (result.modifiedCount > 0) {
+                    Swal.fire("Good!", "FeedBack has been sent to instructor !", "success");
                 }
-            })
-            .catch(err => console.log(err))
-    }
+            });
+    };
     return (
         <div className='w-full'>
             <PageBanner
