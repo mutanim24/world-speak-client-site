@@ -18,7 +18,7 @@ const EnrolledClass = () => {
                     </thead>
                     <tbody>
                         {
-                            enrolled.map((cls, index) => <tr>
+                            enrolled.map((cls, index) => <tr key={cls._id}>
                                 <th>{index + 1}</th>
                                 <td>
                                     <div className="flex items-center space-x-3">

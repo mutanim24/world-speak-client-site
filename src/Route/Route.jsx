@@ -19,6 +19,7 @@ import PrivateRoute from "./PrivateRoute";
 import UpdateClass from "../pages/Dashboard/MyClass/UpdateClass";
 import Feedback from "../pages/Dashboard/ManageClass/Feedback";
 import Payment from "../pages/Dashboard/Payment/Payment";
+import PaymentHistory from "../pages/Dashboard/PaymentHistory/PaymentHistory";
 
 export const router = createBrowserRouter([
   {
@@ -93,6 +94,10 @@ export const router = createBrowserRouter([
         path: 'update-class/:id',
         element: <UpdateClass></UpdateClass>,
         loader: ({ params }) => fetch(`http://localhost:5000/update-class/${params.id}`)
+      },
+      {
+        path: 'payment-history',
+        element: <PaymentHistory></PaymentHistory>
       },
       {
         path: 'feedback',

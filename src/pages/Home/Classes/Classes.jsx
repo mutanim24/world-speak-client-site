@@ -6,14 +6,14 @@ const Classes = () => {
     const [data] = useData()
 
     return (
-        <div className='px-14'>
+        <div className='px-6 md:px-14'>
             <SectionTitle
                 title='Our Popular Language Classes'
                 subtitle='Discover the Most Enrolled Classes at WorldSpeak'
             ></SectionTitle>
-            <div className='grid grid-cols-3 gap-6 my-10'>
+            <div className='grid md:grid-cols-3 gap-6 my-10'>
                 {
-                    data.map(cls => <ClassCard
+                    data.slice(0, 6).map(cls => <ClassCard
                         key={cls._id}
                         cls={cls}
                     ></ClassCard>)

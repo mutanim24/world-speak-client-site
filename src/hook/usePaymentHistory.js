@@ -1,0 +1,14 @@
+import { useQuery } from "@tanstack/react-query";
+
+const usePaymentHistory = () => {
+    const { data: paymenthistory = [], isLoading: loading, refetch } = useQuery({
+        queryKey: ['paymenthistory'],
+        queryFn: async () => {
+            const res = await fetch('http://localhost:5000/payment')
+            return res.json();
+        }
+    })
+    return [paymenthistory, loading, refetch];
+};
+
+export default usePaymentHistory;

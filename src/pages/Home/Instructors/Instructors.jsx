@@ -6,14 +6,14 @@ import useData from '../../../hook/useData';
 const Instructors = () => {
     const [data] = useData();
     return (
-        <div className='px-14'>
+        <div className='px-6 md:px-14'>
             <SectionTitle
                 title='Popular Language Experts'
                 subtitle='Discover our Popular Instructors at WorldSpeak'
             ></SectionTitle>
-            <div className='grid grid-cols-3 gap-7'>
+            <div className='grid md:grid-cols-3 gap-7'>
                 {
-                    data.map(instructor => <Instructor
+                    data.slice(0, 6).map(instructor => <Instructor
                         instructor={instructor}
                         key={instructor._id}
                     ></Instructor>)
