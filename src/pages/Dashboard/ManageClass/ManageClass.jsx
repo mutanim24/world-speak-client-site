@@ -9,7 +9,7 @@ const ManageClass = () => {
     const [allClass, refetch] = useAllClass();
 
     const handleUpdateStatus = (id, status) => {
-        fetch(`http://localhost:5000/classes/${id}`, {
+        fetch(`https://world-speak-server-site.vercel.app/classes/${id}`, {
             method: "PATCH",
             headers: {
                 "content-type": "application/json",
@@ -41,7 +41,7 @@ const ManageClass = () => {
 
 
     // const handleApprove = id => {
-    //     fetch(`http://localhost:5000/classes/${id}`, {
+    //     fetch(`https://world-speak-server-site.vercel.app/classes/${id}`, {
     //         method: "PATCH",
     //         headers: {
     //             'content-type': 'application/json'

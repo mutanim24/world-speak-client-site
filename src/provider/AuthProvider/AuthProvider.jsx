@@ -34,7 +34,7 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             if (currentUser?.email) {
-                fetch('http://localhost:5000/jwt', {
+                fetch('https://world-speak-server-site.vercel.app/jwt', {
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json'

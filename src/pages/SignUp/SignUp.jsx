@@ -19,7 +19,7 @@ const SignUp = () => {
                 updateUser(data.name, data.photoURL)
                     .then(() => {
                         const userData = { name: data.name, email: data.email, photoURL: data.photoURL, role: 'student' };
-                        fetch('http://localhost:5000/users', {
+                        fetch('https://world-speak-server-site.vercel.app/users', {
                             method: "POST",
                             headers: {
                                 'content-type': 'application/json'

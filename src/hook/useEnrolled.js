@@ -4,7 +4,7 @@ const useEnrolled = () => {
     const { data: enrolled = [], refetch } = useQuery({
         queryKey: ['enrolled'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/enrolledclass')
+            const res = await fetch('https://world-speak-server-site.vercel.app/enrolledclass')
             return res.json();
         }
     })

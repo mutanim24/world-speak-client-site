@@ -4,7 +4,7 @@ const useData = () => {
     const { data = [], isLoading: loading, refetch } = useQuery({
         queryKey: ['data'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/classes')
+            const res = await fetch('https://world-speak-server-site.vercel.app/classes')
             return res.json();
         }
     })

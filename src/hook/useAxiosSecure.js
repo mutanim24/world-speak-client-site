@@ -2,7 +2,7 @@ import axios from "axios";
 import { useEffect } from "react";
 
 const axiosSecure = axios.create({
-    baseURL: `http://localhost:5000`
+    baseURL: `https://world-speak-server-site.vercel.app`
 })
 const useAxiosSecure = () => {
     useEffect(() => {
@@ -19,7 +19,7 @@ const useAxiosSecure = () => {
             error => {
                 if (error.response && (error?.response.status === 403 || error?.response.status === 401)) {
                     {
-                        console.log(error?.response.data.error)
+                        // console.log(error?.response.data.error)
                     }
                 }
             }

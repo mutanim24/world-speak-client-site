@@ -14,6 +14,7 @@ const ClassCard = ({ cls }) => {
 
     const [isAdmin] = useAdmin()
     const [isInstructor] = useInstructor();
+    console.log(isInstructor, isAdmin)
 
     const handleSelectClass = cls => {
         if (user?.email) {

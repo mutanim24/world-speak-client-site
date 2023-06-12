@@ -13,7 +13,7 @@ const SocialLogin = () => {
                 // console.log(result.user)
                 if (result?.user.email) {
                     const userData = { name: result.user.displayName, email: result.user.email, image: result.user?.photoURL, role: 'student' };
-                    fetch('http://localhost:5000/users', {
+                    fetch('https://world-speak-server-site.vercel.app/users', {
                         method: "POST",
                         headers: {
                             'content-type': 'application/json'

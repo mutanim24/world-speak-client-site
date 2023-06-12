@@ -23,7 +23,7 @@ const UpdateClass = () => {
 
         const newClass = { class_name, class_image, instructor_name, instructor_email, instructor_image, available_seats, price, class_status, enrolled_class };
 
-        fetch('http://localhost:5000/classes', {
+        fetch('https://world-speak-server-site.vercel.app/classes', {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'

@@ -6,13 +6,13 @@ const ManageUser = () => {
     const [users, refetch] = useUsers()
     // const [dbUsers, setDbUsers] = useState([]);
     // useEffect(() => {
-    //     fetch('http://localhost:5000/users')
+    //     fetch('https://world-speak-server-site.vercel.app/users')
     //         .then(res => res.json())
     //         .then(data => setDbUsers(data))
     // }, [])
 
     const handleRole = (id, position) => {
-        fetch(`http://localhost:5000/users/admin/${id}`, {
+        fetch(`https://world-speak-server-site.vercel.app/users/admin/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

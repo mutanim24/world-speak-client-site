@@ -75,7 +75,7 @@ export const router = createBrowserRouter([
       {
         path: 'my-class/:id',
         element: <UpdateClass></UpdateClass>,
-        loader: ({ params }) => fetch(`http://localhost:5000/my-class/${params.id}`)
+        loader: ({ params }) => fetch(`https://world-speak-server-site.vercel.app/my-class/${params.id}`)
       },
       // student route
       {
@@ -93,7 +93,7 @@ export const router = createBrowserRouter([
       {
         path: 'update-class/:id',
         element: <UpdateClass></UpdateClass>,
-        loader: ({ params }) => fetch(`http://localhost:5000/update-class/${params.id}`)
+        loader: ({ params }) => fetch(`https://world-speak-server-site.vercel.app/update-class/${params.id}`)
       },
       {
         path: 'payment-history',

@@ -4,7 +4,7 @@ const usePaymentHistory = () => {
     const { data: paymenthistory = [], isLoading: loading, refetch } = useQuery({
         queryKey: ['paymenthistory'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/payment')
+            const res = await fetch('https://world-speak-server-site.vercel.app/payment')
             return res.json();
         }
     })

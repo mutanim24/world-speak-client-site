@@ -7,7 +7,7 @@ const Instructor = () => {
     const [instructors, setInstructors] = useState([]);
     // TODO: use tan stack query
     useEffect(() => {
-        fetch('http://localhost:5000/classes')
+        fetch('https://world-speak-server-site.vercel.app/classes')
             .then(res => res.json())
             .then(data => setInstructors(data))
     }, [])

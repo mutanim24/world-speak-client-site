@@ -24,7 +24,7 @@ const SelectedClass = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/select-class/${id}`, {
+                fetch(`https://world-speak-server-site.vercel.app/select-class/${id}`, {
                     method: "DELETE"
                 })
                     .then(res => res.json())
@@ -54,7 +54,7 @@ const SelectedClass = () => {
     //     const { data = [], refetch } = useQuery({
     //         queryKey: ['data'],
     //         queryFn: async () => {
-    //             const res = await fetch(`http://localhost:5000/select-class/${id}`, {
+    //             const res = await fetch(`https://world-speak-server-site.vercel.app/select-class/${id}`, {
     //                 method: 'DELETE'
     //             });
     //             return res.json();
