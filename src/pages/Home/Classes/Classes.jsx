@@ -8,7 +8,7 @@ const Classes = () => {
     return (
         <div className='px-6 md:px-14'>
             <SectionTitle
-                title='Our Popular Language Classes'
+                title='Popular Classes'
                 subtitle='Discover the Most Enrolled Classes at WorldSpeak'
             ></SectionTitle>
             <div className='grid md:grid-cols-3 gap-6 my-10'>

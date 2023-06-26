@@ -2,6 +2,7 @@ import React from 'react';
 import slide1 from '../../../assets/english.jpg'
 import slide2 from '../../../assets/banglai.jpg'
 import slide3 from '../../../assets/german.jpg'
+import { Link } from 'react-router-dom';
 
 const Slider = () => {
 
@@ -16,7 +17,7 @@ const Slider = () => {
                     <div className="space-y-5 text-white text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                         <h1 className="text-5xl font-bold">Embrace Multilingualism</h1>
                         <p className="text-lg">Immerse yourself in the beauty of languages with WorldSpeak's extensive selection of courses</p>
-                        <a className="btn bg-cyan-600 text-white mt-4">Learn More</a>
+                        <Link to='/classes' className='btn bg-cyan-600 text-white hover:bg-cyan-800'>All Class!</Link>
                     </div>
                 </div>
             </div>
@@ -29,7 +30,7 @@ const Slider = () => {
                     <div className="space-y-5 text-white text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                         <h1 className="text-5xl font-bold">Unlock the World's Languages</h1>
                         <p className="text-lg">Discover a diverse range of language courses taught by expert teachers on WorldSpeak</p>
-                        <a className="btn bg-cyan-600 text-white mt-4">Learn More</a>
+                        <Link to='/classes' className='btn bg-cyan-600 text-white hover:bg-cyan-800'>All Class!</Link>
                     </div>
                 </div>
             </div>
@@ -42,7 +43,7 @@ const Slider = () => {
                     <div className="space-y-5 text-white text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                         <h1 className="text-5xl font-bold">Learn Any Language, Anytime</h1>
                         <p className="text-lg">Explore our marketplace of language courses and embark on a journey of global communication</p>
-                        <a className="btn bg-cyan-600 text-white mt-4">Learn More</a>
+                        <Link to='/classes' className='btn bg-cyan-600 text-white hover:bg-cyan-800'>All Class!</Link>
                     </div>
                 </div>
             </div>

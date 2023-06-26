@@ -14,7 +14,6 @@ const ClassCard = ({ cls }) => {
 
     const [isAdmin] = useAdmin()
     const [isInstructor] = useInstructor();
-    console.log(isInstructor, isAdmin)
 
     const handleSelectClass = cls => {
         if (user?.email) {
@@ -51,18 +50,31 @@ const ClassCard = ({ cls }) => {
         }
     }
     return (
-        <div key={cls._id} className='shadow-lg relative'>
-            <img src={cls.class_image} alt="" />
-            <p className='absolute top-5 right-5 bg-black px-2 rounded font-bold text-white'>${cls.price}</p>
-            <div className='p-5 space-y-2'>
-                <h2 className='font-bold text-[20px]'>{cls.class_name}</h2>
-                <h4 className='text-[18px] font-semibold'>Instructor: {cls.instructor_name}</h4>
-                <hr />
-                <p>Enrolled: {cls.enrolled_class}</p>
-                <div className='flex items-center justify-between'>
-                    <p>Available seats: {cls.available_seats}</p>
-                    <button disabled={isAdmin || isInstructor} onClick={() => handleSelectClass(cls)} className='btn btn-sm bg-cyan-600 text-white'>Select</button>
-                </div>
+        <div className="overflow-hidden rounded bg-transparent shadow-md shadow-slate-200">
+            {/*  <!-- Image --> */}
+            <figure>
+                <img
+                    src={cls.class_image}
+                    alt="card image"
+                    className="aspect-video w-full"
+                />
+            </figure>
+            {/*  <!-- Body--> */}
+            <div className="p-6">
+                <header className="mb-4">
+                    <h3 className="text-xl font-medium">
+                    {cls.class_name}
+                    </h3>
+                    <p className=" text-slate-400">${cls.price}</p>
+                </header>
+                <p>By {cls.instructor_name}</p>
+                <p>Available seats: {cls.available_seats}</p>
+            </div>
+            {/*  <!-- Action base sized basic button --> */}
+            <div className="flex justify-end p-6 pt-0">
+                <button disabled={isAdmin || isInstructor} onClick={() => handleSelectClass(cls)} className="inline-flex h-10 w-full items-center justify-center gap-2 whitespace-nowrap rounded bg-cyan-600 px-5 text-sm font-medium tracking-wide text-white transition duration-300 hover:bg-cyan-800">
+                    <span>Select now!</span>
+                </button>
             </div>
         </div>
     );
