@@ -21,7 +21,7 @@ const AllClasses = () => {
             <PageBanner
                 heading='all classes'
             ></PageBanner>
-            <div className='grid grid-cols-3 gap-6 my-10 px-14'>
+            <div className='grid md:grid-cols-3 gap-6 my-10 px-6 md:px-14'>
                 {
                     data.map(cls => <ClassCard
                         key={cls._id}

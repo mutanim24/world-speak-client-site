@@ -6,7 +6,7 @@ import { GiFlexibleLamp } from 'react-icons/gi';
 
 const Facilities = () => {
     return (
-        <div className='grid grid-cols-4 gap-4 my-10 px-14'>
+        <div className='grid md:grid-cols-4 gap-4 my-10 px-6 md:px-14'>
             <div className='text-center border p-5 shadow-xl hover:shadow-xl hover:shadow-cyan-100 parent-div'>
                 <div className='flex flex-col items-center justify-center'>
                     <div className='mb-4'>

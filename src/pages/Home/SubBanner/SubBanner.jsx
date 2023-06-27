@@ -1,18 +1,19 @@
 import React from 'react';
 import banner2 from '../../../assets/banner2.jpg'
+import { Link } from 'react-router-dom';
 
 const SubBanner = () => {
     return (
-        <div className="hero min-h-screen" style={`background-image: url(${banner2});`}>
-            <div className="hero-overlay bg-opacity-60"></div>
-            <div className="hero-content text-center text-neutral-content">
-                <div className="max-w-md">
-                    <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-                    <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                    <button className="btn btn-primary">Get Started</button>
+        <section className="relative my-8 text-center">
+            <div className="h-96 bg-cover bg-center bg-fixed" style={{ backgroundImage: `url(${banner2})` }}>
+                <div className="absolute inset-0 bg-black opacity-70"></div>
+                <div className="absolute inset-0 flex flex-col justify-center items-center text-white">
+                    <h2 className="text-xl font-semibold">STARTING ONLINE LEARNING</h2>
+                    <h1 className="text-4xl font-bold my-5">ENHANCE YOUR SKILLS WITH BEST ONLINE COURSES</h1>
+                    <Link to='/classes' className='btn bg-cyan-600 text-white hover:bg-cyan-800'>Get Start Now!!</Link>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 
