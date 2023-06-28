@@ -17,7 +17,6 @@ const MyClass = () => {
             .then(data => setMyClasses(data?.data))
             .catch(err => console.log(err))
     }, [axiosSecure])
-    console.log(myClasses?.feedback)
     return (
         <div className='w-full px-8'>
             <div className="overflow-x-auto w-full">

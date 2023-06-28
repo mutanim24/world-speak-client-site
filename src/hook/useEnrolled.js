@@ -1,14 +1,20 @@
 import { useQuery } from "@tanstack/react-query";
+import { useContext } from "react";
+import { AuthContext } from "../provider/AuthProvider/AuthProvider";
+import useAxiosSecure from "./useAxiosSecure";
 
 const useEnrolled = () => {
+
+    const {user} = useContext(AuthContext);
+    const axiosSecure = useAxiosSecure();
+
     const { data: enrolled = [], refetch } = useQuery({
-        queryKey: ['enrolled'],
+        queryKey: ['enrolled', user?.email],
         queryFn: async () => {
-            const res = await fetch('https://world-speak-server-site.vercel.app/enrolledclass')
-            return res.json();
+            const res = await axiosSecure.get(`/enrolledclass?email=${user?.email}`)
+            return res.data;
         }
     })
     return [enrolled, refetch];
 };
-
 export default useEnrolled;
