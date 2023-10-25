@@ -11,7 +11,7 @@ const Classes = () => {
                 title='Popular Classes'
                 subtitle='Discover the Most Enrolled Classes at WorldSpeak'
             ></SectionTitle>
-            <div className='grid md:grid-cols-3 gap-6 my-10'>
+            <div className='grid md:grid-cols-4 gap-6 my-10'>
                 {
                     data.slice(0, 6).map(cls => <ClassCard
                         key={cls._id}

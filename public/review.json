@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "name": "John Doe",
+        "image": "https://images.pexels.com/photos/9489771/pexels-photo-9489771.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "review": "I absolutely love this online course platform! The variety of courses available is impressive, and the quality of content is top-notch. The user-friendly interface makes it a breeze to navigate and find the perfect courses. I highly recommend it!",
+        "rating": 5
+    },
+    {
+        "id": 2,
+        "name": "Jane Smith",
+        "image": "https://images.pexels.com/photos/8617708/pexels-photo-8617708.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "review": "This website has been a game-changer for me. The courses are well-structured and the instructors are experts in their fields. The purchasing process is smooth, and I appreciate the affordable pricing. Definitely my go-to place for learning!",
+        "rating": 5
+    },
+    {
+        "id": 3,
+        "name": "Sam Green",
+        "image": "https://images.pexels.com/photos/17050931/pexels-photo-17050931/free-photo-of-photo-of-a-pensive-young-man-in-a-suit-sitting-at-a-table-with-books.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "review": "I've tried several online learning platforms, and this one stands out. The quality of instruction is exceptional, and the community forums provide a valuable space for discussions and networking. Kudos to the team behind this platform!",
+        "rating": 4
+    },
+    {
+        "id": 4,
+        "name": "Emily Davis",
+        "image": "https://images.pexels.com/photos/16160928/pexels-photo-16160928/free-photo-of-portrait-of-a-young-smiling-woman-wearing-a-backpack.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "review": "I've been using this platform for a while now, and I'm continuously impressed. The website design is clean and intuitive, and the courses cover a wide range of topics. The instructors are knowledgeable and engaging. A definite must-try!",
+        "rating": 5
+    },
+    {
+        "id": 5,
+        "name": "Michael Johnson",
+        "image": "https://images.pexels.com/photos/6682475/pexels-photo-6682475.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "review": "I'm extremely satisfied with the courses I've taken on this website. The content is high-quality, and the video lectures are well-produced. The progress tracking feature is handy, and I appreciate the certificates upon completion. 5 stars!",
+        "rating": 5
+    },
+    {
+        "id": 6,
+        "name": "Lisa Anderson",
+        "image": "https://images.pexels.com/photos/16105457/pexels-photo-16105457/free-photo-of-smiling-woman-against-brick-wall.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "review": "I've recommended this platform to all my friends and colleagues. The courses are diverse, ranging from technical skills to personal development. The pricing is fair, and the customer support team is responsive. I'm a happy learner!",
+        "rating": 5
+    },
+    {
+        "id": 7,
+        "name": "David Brown",
+        "image": "hhttps://images.pexels.com/photos/16105475/pexels-photo-16105475/free-photo-of-young-smiling-man.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "review": "This online course platform is a treasure trove of knowledge. The instructors are passionate about their subjects, and it shows in their teaching. The quizzes and assignments are challenging, and I've grown so much as a learner. Fantastic platform!",
+        "rating": 5
+    },
+    {
+        "id": 8,
+        "name": "Sarah Wilson",
+        "image": "https://images.pexels.com/photos/16160815/pexels-photo-16160815/free-photo-of-a-young-teenager-smiling.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "review": "I appreciate the dedication to quality on this platform. The courses are well-researched and presented in an engaging manner. The community is supportive, and I've made valuable connections here. I couldn't ask for more!",
+        "rating": 4
+    },
+    {
+        "id": 9,
+        "name": "Chris Taylor",
+        "image": "https://images.pexels.com/photos/16173670/pexels-photo-16173670/free-photo-of-gabrielguisso.jpeg?auto=compress&cs=tinysrgb&w=600",
+        "review": "As a lifelong learner, I've tried many platforms, and this one is a standout. The instructors are experts in their fields, and the course material is up-to-date. The website's interface is easy to use, and I love the progress tracking feature.",
+        "rating": 4
+    }
+]

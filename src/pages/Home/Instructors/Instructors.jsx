@@ -11,7 +11,7 @@ const Instructors = () => {
                 title='Language Experts'
                 subtitle='Discover our Popular Instructors at WorldSpeak'
             ></SectionTitle>
-            <div className='grid md:grid-cols-3 gap-7'>
+            <div className='grid md:grid-cols-4 gap-7'>
                 {
                     data.slice(0, 6).map(instructor => <InstructorCard
                         key={instructor._id}

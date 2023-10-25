@@ -8,7 +8,7 @@ import useData from '../../hook/useData';
 
 const AllClasses = () => {
 
-    const [data, , refetch] = useData()
+    const [data, , refetch] = useData();
 
     // const [classes, setClasses] = useState([]);
     // useEffect(() => {

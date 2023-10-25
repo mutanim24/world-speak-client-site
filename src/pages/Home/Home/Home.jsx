@@ -4,6 +4,7 @@ import Facilities from "../Facilities/Facilities";
 import Instructors from "../Instructors/Instructors";
 import Slider from "../Slider/Slider";
 import SubBanner from "../SubBanner/SubBanner";
+import Testimonial from "../Testimonial/Testimonial";
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
            <Classes></Classes>
            <SubBanner></SubBanner>
            <Instructors></Instructors>
+           <Testimonial></Testimonial>
            <CallToAction></CallToAction>
         </div>
     );
