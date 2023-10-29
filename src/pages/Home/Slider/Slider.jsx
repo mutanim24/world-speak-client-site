@@ -4,6 +4,7 @@
 // import slide3 from '../../../assets/german.jpg'
 // import { Link } from 'react-router-dom';
 
+import banner from '../../../assets/banner.png'
 import React, { useRef, useState } from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -85,66 +86,48 @@ const Slider = () => {
                     className="parallax-bg"
                     style={{
                         'backgroundImage':
-                            'url(https://motto-jp.com/media/wp-content/uploads/2021/04/AdobeStock_74877484.jpeg)',
-                            backgroundSize: "cover",
-                            backgroundPosition: "top"
+                            `url(${banner})`,
+                        backgroundSize: "cover",
+                        backgroundPosition: "top"
                     }}
                     data-swiper-parallax="-23%"
                 ></div>
-                <SwiperSlide className='z-50'>
-                    <div className="title" data-swiper-parallax="-300">
-                        Slide 1
+                <SwiperSlide className=''>
+                    <div className="title mt-12 md:mt-28" data-swiper-parallax="-300">
+                        <h1 className='text-5xl font-bold'> Speak the Language of Success</h1>
                     </div>
                     <div className="subtitle" data-swiper-parallax="-200">
-                        Subtitle
+                        <h3 className='text-2xl font-semibold my-4'>Your Gateway to Multilingual Excellence</h3>
                     </div>
                     <div className="text" data-swiper-parallax="-100">
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-                            dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
-                            laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
-                            Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
-                            Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
-                            ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
-                            tincidunt ut libero. Aenean feugiat non eros quis feugiat.
+                            Join WorldSpeak and become a confident communicator. Our immersive courses are designed to empower you in every conversation, business meeting, and adventure abroad. Start speaking success!
                         </p>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className="title" data-swiper-parallax="-300">
-                        Slide 2
+                        <h1 className='text-5xl font-bold'> Discover the Magic of Multilingualism</h1>
                     </div>
                     <div className="subtitle" data-swiper-parallax="-200">
-                        Subtitle
+                        <h3 className='text-2xl font-semibold my-4'>Where Every Word Sparks a Connection</h3>
                     </div>
                     <div className="text" data-swiper-parallax="-100">
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-                            dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
-                            laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
-                            Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
-                            Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
-                            ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
-                            tincidunt ut libero. Aenean feugiat non eros quis feugiat.
+                            WorldSpeak is your passport to a world united by language. Dive into our engaging courses and watch as your ability to connect, understand, and grow flourishes. Embrace the magic of speaking in many tongues!
                         </p>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <div className="title" data-swiper-parallax="-300">
-                        Slide 3
+                        <h1 className='text-5xl font-bold'> Unlock a World of Opportunities</h1>
                     </div>
                     <div className="subtitle" data-swiper-parallax="-200">
-                        Subtitle
+                        <h3 className='text-2xl font-semibold my-4'>Learn Languages with WorldSpeak</h3>
                     </div>
                     <div className="text" data-swiper-parallax="-100">
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam
-                            dictum mattis velit, sit amet faucibus felis iaculis nec. Nulla
-                            laoreet justo vitae porttitor porttitor. Suspendisse in sem justo.
-                            Integer laoreet magna nec elit suscipit, ac laoreet nibh euismod.
-                            Aliquam hendrerit lorem at elit facilisis rutrum. Ut at
-                            ullamcorper velit. Nulla ligula nisi, imperdiet ut lacinia nec,
-                            tincidunt ut libero. Aenean feugiat non eros quis feugiat.
+                            Embark on a journey of language mastery with WorldSpeak. Elevate your global communication skills and open doors to endless possibilities. Start your adventure today!
                         </p>
                     </div>
                 </SwiperSlide>

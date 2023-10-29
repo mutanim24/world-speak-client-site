@@ -53,14 +53,16 @@ const Testimonial = () => {
                 title='Student Testimonial'
                 subtitle='Hear What Our Students Have to Say!'
             ></SectionTitle>
-            <Slider {...settings}>
-                {
-                    reviews.map(review => <ReviewCard
-                        key={review.id}
-                        review={review}
-                    ></ReviewCard>)
-                }
-            </Slider>
+            <div className='mb-20'>
+                <Slider {...settings}>
+                    {
+                        reviews.map(review => <ReviewCard
+                            key={review.id}
+                            review={review}
+                        ></ReviewCard>)
+                    }
+                </Slider>
+            </div>
         </div>
     );
 };
