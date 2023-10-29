@@ -94,10 +94,10 @@ const Slider = () => {
                 ></div>
                 <SwiperSlide className=''>
                     <div className="title mt-12 md:mt-28" data-swiper-parallax="-300">
-                        <h1 className='text-5xl font-bold'> Speak the Language of Success</h1>
+                        <h1 className='text-3xl md:text-5xl font-bold'> Speak the Language of Success</h1>
                     </div>
                     <div className="subtitle" data-swiper-parallax="-200">
-                        <h3 className='text-2xl font-semibold my-4'>Your Gateway to Multilingual Excellence</h3>
+                        <h3 className='text-xl md:text-2xl font-semibold my-4'>Your Gateway to Multilingual Excellence</h3>
                     </div>
                     <div className="text" data-swiper-parallax="-100">
                         <p>
@@ -106,11 +106,11 @@ const Slider = () => {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="title" data-swiper-parallax="-300">
-                        <h1 className='text-5xl font-bold'> Discover the Magic of Multilingualism</h1>
+                    <div className="title mt-12 md:mt-28" data-swiper-parallax="-300">
+                        <h1 className='text-3xl md:text-5xl font-bold'> Discover the Magic of Multilingualism</h1>
                     </div>
                     <div className="subtitle" data-swiper-parallax="-200">
-                        <h3 className='text-2xl font-semibold my-4'>Where Every Word Sparks a Connection</h3>
+                        <h3 className='text-xl md:text-2xl font-semibold my-4'>Where Every Word Sparks a Connection</h3>
                     </div>
                     <div className="text" data-swiper-parallax="-100">
                         <p>
@@ -119,11 +119,11 @@ const Slider = () => {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <div className="title" data-swiper-parallax="-300">
-                        <h1 className='text-5xl font-bold'> Unlock a World of Opportunities</h1>
+                    <div className="title mt-12 md:mt-28" data-swiper-parallax="-300">
+                        <h1 className='text-3xl md:text-5xl font-bold'> Unlock a World of Opportunities</h1>
                     </div>
                     <div className="subtitle" data-swiper-parallax="-200">
-                        <h3 className='text-2xl font-semibold my-4'>Learn Languages with WorldSpeak</h3>
+                        <h3 className='text-xl md:text-2xl font-semibold my-4'>Learn Languages with WorldSpeak</h3>
                     </div>
                     <div className="text" data-swiper-parallax="-100">
                         <p>
