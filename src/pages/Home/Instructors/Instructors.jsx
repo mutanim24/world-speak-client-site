@@ -13,7 +13,7 @@ const Instructors = () => {
             ></SectionTitle>
             <div className='grid md:grid-cols-4 gap-7'>
                 {
-                    data.slice(0, 6).map(instructor => <InstructorCard
+                    data.slice(0, 4).map(instructor => <InstructorCard
                         key={instructor._id}
                         teacher={instructor}
                     ></InstructorCard>)
