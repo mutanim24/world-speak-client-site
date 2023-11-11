@@ -1,8 +1,13 @@
 import React from 'react';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 const InstructorCard = ({ teacher }) => {
+    useEffect(() => {
+        AOS.init({ duration: 1000 });
+    }, []);
     return (
-        <div className="overflow-hidden rounded bg-transparent shadow-md shadow-slate-200">
+        <div className="overflow-hidden rounded bg-transparent shadow-md shadow-slate-200" data-aos="zoom-in">
             {/*  <!-- Image --> */}
             <figure>
                 <img

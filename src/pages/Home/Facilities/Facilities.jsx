@@ -3,11 +3,16 @@ import './Facilities.css'
 import { FaLanguage, FaChalkboardTeacher } from 'react-icons/fa';
 import { AiOutlineFundProjectionScreen } from 'react-icons/ai';
 import { GiFlexibleLamp } from 'react-icons/gi';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
 
 const Facilities = () => {
+    useEffect(() => {
+        AOS.init({ duration: 1000 });
+    }, [])
     return (
         <div className='grid md:grid-cols-4 gap-4 my-10 px-6 md:px-14'>
-            <div className='text-center border p-5 shadow-xl hover:shadow-xl hover:shadow-cyan-100 parent-div'>
+            <div data-aos="zoom-out" className='text-center border p-5 shadow-xl hover:shadow-xl hover:shadow-cyan-100 parent-div'>
                 <div className='flex flex-col items-center justify-center'>
                     <div className='mb-4'>
                         <FaLanguage className='text-[80px] transition-transform duration-300 transform-gpu icon'></FaLanguage>
@@ -18,7 +23,7 @@ const Facilities = () => {
                     </div>
                 </div>
             </div>
-            <div className='text-center border p-5 shadow-xl hover:shadow-xl hover:shadow-cyan-100 parent-div'>
+            <div data-aos="zoom-out" className='text-center border p-5 shadow-xl hover:shadow-xl hover:shadow-cyan-100 parent-div'>
                 <div className='flex flex-col items-center justify-center'>
                     <div className='mb-4'>
                         <FaChalkboardTeacher className='text-[80px] transition-transform duration-300 transform-gpu icon'></FaChalkboardTeacher>
@@ -29,7 +34,7 @@ const Facilities = () => {
                     </div>
                 </div>
             </div>
-            <div className='text-center border p-5 shadow-xl hover:shadow-xl hover:shadow-cyan-100 parent-div'>
+            <div data-aos="zoom-out" className='text-center border p-5 shadow-xl hover:shadow-xl hover:shadow-cyan-100 parent-div'>
                 <div className='flex flex-col items-center justify-center'>
                     <div className='mb-4'>
                         <AiOutlineFundProjectionScreen className='text-[80px] transition-transform duration-300 transform-gpu icon'></AiOutlineFundProjectionScreen>
@@ -40,7 +45,7 @@ const Facilities = () => {
                     </div>
                 </div>
             </div>
-            <div className='text-center border p-5 shadow-xl hover:shadow-xl hover:shadow-cyan-100 parent-div'>
+            <div data-aos="zoom-out" className='text-center border p-5 shadow-xl hover:shadow-xl hover:shadow-cyan-100 parent-div'>
                 <div className='flex flex-col items-center justify-center'>
                     <div className='mb-4'>
                         <GiFlexibleLamp className='text-[80px] transition-transform duration-300 transform-gpu icon'></GiFlexibleLamp>

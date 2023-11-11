@@ -5,6 +5,11 @@ import { AuthContext } from '../../provider/AuthProvider/AuthProvider';
 import { useNavigate } from 'react-router-dom';
 import useAdmin from '../../hook/useAdmin';
 import useInstructor from '../../hook/useInstructor';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from 'react';
+
+
 
 const ClassCard = ({ cls }) => {
     const { user } = useContext(AuthContext);
@@ -49,8 +54,15 @@ const ClassCard = ({ cls }) => {
             })
         }
     }
+
+    // AOS
+    useEffect(() => {
+        AOS.init({ duration: 1000 });
+      }, []);
+
+
     return (
-        <div className="overflow-hidden rounded bg-transparent shadow-md shadow-slate-200">
+        <div className="overflow-hidden rounded bg-transparent shadow-md shadow-slate-200" data-aos="zoom-in">
             {/*  <!-- Image --> */}
             <figure>
                 <img

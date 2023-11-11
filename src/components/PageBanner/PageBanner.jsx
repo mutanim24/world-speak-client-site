@@ -1,10 +1,14 @@
 import React from 'react';
+import pageBanner from '../../assets/page banner.jpg'
 
-const PageBanner = ({heading}) => {
+const PageBanner = ({ heading }) => {
     // TODO : change banner design
     return (
-        <div className='px-14 py-6 bg-cyan-200'>
-            <h1 className='uppercase text-center md:text-left font-semibold text-2xl py-4'>{heading}</h1>
+        <div className="relative h-64 bg-cover bg-center" style={{ backgroundImage: `url("${pageBanner}")` }}>
+            <div className="absolute inset-0 bg-black opacity-50"></div>
+            <div className="absolute inset-0 flex items-center justify-center">
+                <h1 className="text-4xl font-bold text-white capitalize">{heading}</h1>
+            </div>
         </div>
     );
 };

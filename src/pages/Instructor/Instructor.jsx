@@ -17,7 +17,7 @@ const Instructor = () => {
             <PageBanner
                 heading='our instructors'
             ></PageBanner>
-            <div className='grid md:grid-cols-3 gap-6 my-10 px-6 md:px-14'>
+            <div className='grid md:grid-cols-4 gap-6 my-10 px-6 md:px-14'>
                 {
                     instructors.map(teacher => <InstructorCard
                         key={teacher._id}
