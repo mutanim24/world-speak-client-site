@@ -2,6 +2,7 @@ import CallToAction from "../CallToAction/CallToAction";
 import Classes from "../Classes/Classes";
 import Facilities from "../Facilities/Facilities";
 import Instructors from "../Instructors/Instructors";
+import Number from "../Number/Number";
 import Quote from "../Quote/Quote";
 import Slider from "../Slider/Slider";
 import SubBanner from "../SubBanner/SubBanner";
@@ -14,8 +15,9 @@ const Home = () => {
            <Facilities></Facilities>
            <Classes></Classes>
            <SubBanner></SubBanner>
-           <Quote></Quote>
            <Instructors></Instructors>
+           <Number></Number>
+           <Quote></Quote>
            <Testimonial></Testimonial>
            <CallToAction></CallToAction>
         </div>
