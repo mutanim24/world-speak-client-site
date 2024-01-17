@@ -8,7 +8,7 @@ import SectionTitle from "../../../components/SectionTitle/SectionTitle";
 const Number = () => {
     const [counterOn, setCounterOn] = useState(false);
     return (
-        <div className="bg-cyan-600 py-10">
+        <div className="bg-cyan-700 py-10">
             <SectionTitle
                 title='Strength in Numbers'
                 subtitle='A Statistical Snapshot of Achievements and Impact'

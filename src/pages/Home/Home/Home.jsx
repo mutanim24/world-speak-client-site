@@ -4,6 +4,7 @@ import Facilities from "../Facilities/Facilities";
 import Instructors from "../Instructors/Instructors";
 import Number from "../Number/Number";
 import Quote from "../Quote/Quote";
+import HeroSection from "../Slider/HeroSection";
 import Slider from "../Slider/Slider";
 import SubBanner from "../SubBanner/SubBanner";
 import Testimonial from "../Testimonial/Testimonial";
@@ -11,7 +12,8 @@ import Testimonial from "../Testimonial/Testimonial";
 const Home = () => {
     return (
         <div>
-           <Slider></Slider> 
+           {/* <Slider></Slider>  */}
+           <HeroSection></HeroSection>
            <Facilities></Facilities>
            <Classes></Classes>
            <SubBanner></SubBanner>
