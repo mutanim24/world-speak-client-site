@@ -13,7 +13,7 @@ const Instructor = () => {
             .then(data => setInstructors(data))
     }, [])
     return (
-        <div>
+        <div className='space-y-20'>
             <PageBanner
                 heading='our instructors'
             ></PageBanner>
