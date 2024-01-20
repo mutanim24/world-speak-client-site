@@ -25,7 +25,7 @@ const Instructor = () => {
                     ></InstructorCard>)
                     // <div key={teacher._id} className='shadow-lg'>
                     //     <img src={teacher.instructor_image} alt="" />
-                    //     <div className='p-5 space-y-3'>
+                    //     <div className='p-5 space-y-3'> added coment
                     //         <h2 className='font-bold text-3xl'>{teacher.instructor_name}</h2>
                     //         <h4 className='text-1xl font-semibold'>Email: {teacher.instructor_email}</h4>
                     //     </div>
